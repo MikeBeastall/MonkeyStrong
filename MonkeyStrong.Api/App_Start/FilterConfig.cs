@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace co.monkeystrong.api
+namespace MonkeyStrong.Api
 {
     public class FilterConfig
     {

@@ -125,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -135,7 +134,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Climb.cs" />
+    <Compile Include="Models\LatLong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClimbRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IClimbRepository.cs" />
+    <Compile Include="Services\ClimbService.cs" />
+    <Compile Include="Services\Interfaces\IClimbService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
