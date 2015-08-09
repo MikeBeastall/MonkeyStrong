@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using MonkeyStrong.Api.Models;
 
-namespace MonkeyStrong.Api.Repositories.Interfaces
+namespace MonkeyStrong.Api.DataStore.Interfaces
 {
     internal interface IClimbRepository
     {

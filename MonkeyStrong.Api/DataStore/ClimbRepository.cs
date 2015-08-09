@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MonkeyStrong.Api.DataStore.Interfaces;
+using MonkeyStrong.Api.DataStore.Providers.Interfaces;
 using MonkeyStrong.Api.Models;
-using MonkeyStrong.Api.Repositories.Interfaces;
 
-namespace MonkeyStrong.Api.Repositories
+namespace MonkeyStrong.Api.DataStore
 {
     public class ClimbRepository : IClimbRepository
     {
+        public ClimbRepository(IDatabaseProvider databaseProvider)
+        {
+            
+        }
+
         public Task<Climb> Get()
         {
             throw new NotImplementedException();
