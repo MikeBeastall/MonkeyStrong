@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyStrong.Common", "Monk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyStrong.Api", "MonkeyStrong.Api\MonkeyStrong.Api.csproj", "{AE987DC6-2962-4397-9233-7E081FB8CDE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyStrong.Migrations", "MonkeyStrong.Migrations\MonkeyStrong.Migrations.csproj", "{11AAC4EB-A46C-4471-ABDE-0F7AE84B69CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AE987DC6-2962-4397-9233-7E081FB8CDE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE987DC6-2962-4397-9233-7E081FB8CDE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE987DC6-2962-4397-9233-7E081FB8CDE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AAC4EB-A46C-4471-ABDE-0F7AE84B69CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AAC4EB-A46C-4471-ABDE-0F7AE84B69CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AAC4EB-A46C-4471-ABDE-0F7AE84B69CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AAC4EB-A46C-4471-ABDE-0F7AE84B69CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
