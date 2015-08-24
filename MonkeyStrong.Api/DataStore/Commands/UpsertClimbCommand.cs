@@ -17,7 +17,8 @@ namespace MonkeyStrong.Api.DataStore.Commands
                 Id = parameters.Id,
                 LatLong = parameters.LatLong,
                 Rating = parameters.Rating,
-                Styles = parameters.Styles
+                Styles = parameters.Styles,
+                Name = parameters.Name
             };
 
             if (parameters.Id == Guid.Empty)
