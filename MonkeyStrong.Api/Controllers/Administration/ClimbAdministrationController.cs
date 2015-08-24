@@ -2,10 +2,9 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 using MonkeyStrong.Api.DataStore.Interfaces;
+using MonkeyStrong.Api.Extensions;
 using MonkeyStrong.Api.Models;
 using MonkeyStrong.Common.Requests;
-using MonkeyStrong.Common.Responses;
-using MonkeyStrong.Common.TransferObjects;
 
 namespace MonkeyStrong.Api.Controllers.Administration
 {
@@ -32,7 +31,7 @@ namespace MonkeyStrong.Api.Controllers.Administration
 
             var result = await Upsert(climb);
 
-            return Ok(CreateResponse(result));
+            return Ok(result.ToResponse());
         }
 
         public async Task<IHttpActionResult> Put(string id, UpsertClimbRequest request)
@@ -50,26 +49,12 @@ namespace MonkeyStrong.Api.Controllers.Administration
 
             var result = await Upsert(climb);
 
-            return Ok(CreateResponse(result));
+            return Ok(result.ToResponse());
         }
 
         private async Task<Climb> Upsert(Climb climb)
         {
             return await _climbRepository.UpsertAsync(climb);
-        }
-
-        private ClimbResponse CreateResponse(Climb climb)
-        {
-            return new ClimbResponse
-            {
-                LatLong = new LatLongTransferObject
-                {
-                    Latitude = climb.LatLong.Latitude,
-                    Longitude = climb.LatLong.Longitude
-                },
-                Rating = climb.Rating,
-                Styles = climb.Styles
-            };
         }
     }
 }

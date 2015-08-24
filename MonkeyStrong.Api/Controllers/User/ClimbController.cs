@@ -1,13 +1,28 @@
-﻿using System.Web.Http;
-using MonkeyStrong.Common.Responses;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
+using MonkeyStrong.Api.DataStore.Interfaces;
+using MonkeyStrong.Api.DataStore.Repositories.Parameters;
+using MonkeyStrong.Api.Extensions;
 
 namespace MonkeyStrong.Api.Controllers.User
 {
     public class ClimbController : ApiController
     {
-        public IHttpActionResult Get(string name)
+        private readonly IClimbRepository _repository;
+
+        public ClimbController(IClimbRepository repository)
         {
-            return Ok(new ClimbResponse());
+            _repository = repository;
+        }
+
+        public async Task<IHttpActionResult> Get(string name)
+        {
+            var result = await _repository.GetAsync(new GetClimbsParameters
+            {
+                Name = name
+            });
+
+            return Ok(result.ToResponse());
         }
     }
 }

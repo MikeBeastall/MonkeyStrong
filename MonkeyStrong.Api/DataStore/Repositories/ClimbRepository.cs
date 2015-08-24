@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MonkeyStrong.Api.DataStore.Commands.Interfaces;
@@ -63,7 +62,8 @@ namespace MonkeyStrong.Api.DataStore.Repositories
             return await _getClimbsQuery.ExecuteAsync(new GetClimbsQueryParameters
             {
                 Id = parameters.Id,
-                Styles = parameters.Styles.ToList()
+                Styles = parameters.Styles.ToList(),
+                Name = parameters.Name
             }, collection);
         }
     }

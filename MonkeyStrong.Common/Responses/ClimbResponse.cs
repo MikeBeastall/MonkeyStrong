@@ -9,5 +9,6 @@ namespace MonkeyStrong.Common.Responses
         // TODO -> grade?
         public List<string> Styles { get; set; }
         public double Rating { get; set; }
+        public string Name { get; set; }
     }
 }

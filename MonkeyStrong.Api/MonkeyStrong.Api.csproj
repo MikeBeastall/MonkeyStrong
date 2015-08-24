@@ -147,6 +147,7 @@
     <Compile Include="DataStore\Queries\Interfaces\IQuery.cs" />
     <Compile Include="DataStore\Queries\Parameters\GetClimbsQueryParameters.cs" />
     <Compile Include="DataStore\Repositories\Parameters\GetClimbsParameters.cs" />
+    <Compile Include="Extensions\ClimbExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
