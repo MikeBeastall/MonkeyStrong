@@ -129,6 +129,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrap\IConfiguration.cs" />
     <Compile Include="Controllers\Administration\ClimbAdministrationController.cs" />
     <Compile Include="Controllers\User\ClimbController.cs" />
     <Compile Include="DataStore\Mongo\MongoDatabase.cs" />
