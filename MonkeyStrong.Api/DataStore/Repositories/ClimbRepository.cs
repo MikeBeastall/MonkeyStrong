@@ -48,8 +48,6 @@ namespace MonkeyStrong.Api.DataStore.Repositories
             {
                 Id = climb.Id
             }, _database.GetCollection<Climb>("climbs"));
-
-            throw new NotImplementedException();
         }
 
         public async Task<Climb> GetAsync(GetClimbsParameters parameters)
