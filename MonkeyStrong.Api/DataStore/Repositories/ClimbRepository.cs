@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MonkeyStrong.Api.DataStore.Commands.Interfaces;
+using MonkeyStrong.Api.DataStore.Commands.Parameters;
 using MonkeyStrong.Api.DataStore.Interfaces;
 using MonkeyStrong.Api.DataStore.Providers.Interfaces;
 using MonkeyStrong.Api.DataStore.Queries.Interfaces;
@@ -14,21 +16,39 @@ namespace MonkeyStrong.Api.DataStore.Repositories
     public class ClimbRepository : IClimbRepository
     {
         private readonly IDatabase _database;
+        private readonly IDeleteClimbCommand _deleteClimbCommand;
         private readonly IGetClimbsQuery _getClimbsQuery;
+        private readonly IUpsertClimbCommand _upsertClimbCommand;
 
-        public ClimbRepository(IDatabaseProvider databaseProvider, IGetClimbsQuery getClimbsQuery)
+        public ClimbRepository(IDatabaseProvider databaseProvider, IGetClimbsQuery getClimbsQuery,
+            IDeleteClimbCommand deleteClimbCommand, IUpsertClimbCommand upsertClimbCommand)
         {
             _getClimbsQuery = getClimbsQuery;
+            _deleteClimbCommand = deleteClimbCommand;
+            _upsertClimbCommand = upsertClimbCommand;
             _database = databaseProvider.CreateDatabase();
         }
 
-        public Task<Climb> Upsert(Climb climb)
+        public async Task<Climb> Upsert(Climb climb)
         {
-            throw new NotImplementedException();
+            await _upsertClimbCommand.ExecuteAsync(new UpsertClimbCommandParameters
+            {
+                Id = climb.Id,
+                LatLong = climb.LatLong,
+                Styles = climb.Styles,
+                Rating = climb.Rating
+            }, _database.GetCollection<Climb>("climbs"));
+
+            return climb;
         }
 
-        public void Delete(Climb climb)
+        public async Task Delete(Climb climb)
         {
+            await _deleteClimbCommand.ExecuteAsync(new DeleteClimbCommandParameters
+            {
+                Id = climb.Id
+            }, _database.GetCollection<Climb>("climbs"));
+
             throw new NotImplementedException();
         }
 

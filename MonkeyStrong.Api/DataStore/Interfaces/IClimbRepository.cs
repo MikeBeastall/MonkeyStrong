@@ -10,6 +10,6 @@ namespace MonkeyStrong.Api.DataStore.Interfaces
         Task<Climb> Get(GetClimbsParameters parameters);
         Task<IEnumerable<Climb>> GetMany(GetClimbsParameters parameters);
         Task<Climb> Upsert(Climb climb);
-        void Delete(Climb climb);
+        Task Delete(Climb climb);
     }
 }

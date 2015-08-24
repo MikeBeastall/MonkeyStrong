@@ -132,6 +132,13 @@
     <Compile Include="Bootstrap\IConfiguration.cs" />
     <Compile Include="Controllers\Administration\ClimbAdministrationController.cs" />
     <Compile Include="Controllers\User\ClimbController.cs" />
+    <Compile Include="DataStore\Commands\DeleteClimbCommand.cs" />
+    <Compile Include="DataStore\Commands\Interfaces\ICommand.cs" />
+    <Compile Include="DataStore\Commands\Interfaces\IDeleteClimbCommand.cs" />
+    <Compile Include="DataStore\Commands\Interfaces\IUpsertClimbCommand.cs" />
+    <Compile Include="DataStore\Commands\Parameters\DeleteClimbCommandParameters.cs" />
+    <Compile Include="DataStore\Commands\Parameters\UpsertClimbCommandParameters.cs" />
+    <Compile Include="DataStore\Commands\UpsertClimbCommand.cs" />
     <Compile Include="DataStore\Mongo\MongoDatabase.cs" />
     <Compile Include="DataStore\Interfaces\IDatabase.cs" />
     <Compile Include="DataStore\Interfaces\IDataCollection.cs" />
