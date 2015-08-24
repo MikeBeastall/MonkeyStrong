@@ -9,5 +9,6 @@ namespace MonkeyStrong.Api.DataStore.Queries.Parameters
         public List<string> Styles { get; set; }
         public double RatingMin { get; set; }
         public double RatingMax { get; set; }
+        public string Name { get; set; }
     }
 }
