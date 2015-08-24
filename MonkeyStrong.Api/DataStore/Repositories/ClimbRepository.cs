@@ -25,7 +25,7 @@ namespace MonkeyStrong.Api.DataStore.Repositories
             _getClimbsQuery = getClimbsQuery;
             _deleteClimbCommand = deleteClimbCommand;
             _upsertClimbCommand = upsertClimbCommand;
-            _database = databaseProvider.CreateDatabase();
+            _database = databaseProvider.GetDatabase();
         }
 
         public async Task<Climb> UpsertAsync(Climb climb)

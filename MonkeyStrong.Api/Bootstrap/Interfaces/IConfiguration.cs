@@ -1,4 +1,4 @@
-﻿namespace MonkeyStrong.Api.Bootstrap
+﻿namespace MonkeyStrong.Api.Bootstrap.Interfaces
 {
     public interface IConfiguration
     {

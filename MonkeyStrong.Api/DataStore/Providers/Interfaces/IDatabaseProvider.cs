@@ -4,6 +4,6 @@ namespace MonkeyStrong.Api.DataStore.Providers.Interfaces
 {
     public interface IDatabaseProvider
     {
-        IDatabase CreateDatabase();
+        IDatabase GetDatabase();
     }
 }

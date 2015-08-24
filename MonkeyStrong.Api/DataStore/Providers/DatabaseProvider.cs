@@ -1,11 +1,12 @@
 ﻿using MongoDB.Driver;
-using MonkeyStrong.Api.Bootstrap;
+using MonkeyStrong.Api.Bootstrap.Interfaces;
 using MonkeyStrong.Api.DataStore.Interfaces;
 using MonkeyStrong.Api.DataStore.Mongo;
+using MonkeyStrong.Api.DataStore.Providers.Interfaces;
 
 namespace MonkeyStrong.Api.DataStore.Providers
 {
-    public class DatabaseProvider
+    public class DatabaseProvider : IDatabaseProvider
     {
         private readonly IMongoDatabase _database;
 
