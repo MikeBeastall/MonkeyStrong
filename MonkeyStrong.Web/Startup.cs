@@ -1,8 +1,9 @@
 ﻿using Microsoft.Owin;
+using MonkeyStrong.Web;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(co.monkeystrong.web.Startup))]
-namespace co.monkeystrong.web
+[assembly: OwinStartup(typeof(Startup))]
+namespace MonkeyStrong.Web
 {
     public partial class Startup
     {

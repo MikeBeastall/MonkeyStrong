@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace co.monkeystrong.web
+namespace MonkeyStrong.Web
 {
     public class BundleConfig
     {

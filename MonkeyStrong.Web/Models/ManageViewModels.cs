@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace co.monkeystrong.web.Models
+namespace MonkeyStrong.Web.Models
 {
     public class IndexViewModel
     {

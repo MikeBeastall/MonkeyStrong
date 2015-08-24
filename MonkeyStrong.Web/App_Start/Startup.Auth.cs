@@ -1,13 +1,13 @@
 ﻿using System;
+using co.monkeystrong.web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
+using MonkeyStrong.Web.Models;
 using Owin;
-using co.monkeystrong.web.Models;
 
-namespace co.monkeystrong.web
+namespace MonkeyStrong.Web
 {
     public partial class Startup
     {
