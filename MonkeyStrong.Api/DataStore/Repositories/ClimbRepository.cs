@@ -29,7 +29,7 @@ namespace MonkeyStrong.Api.DataStore.Repositories
             _database = databaseProvider.CreateDatabase();
         }
 
-        public async Task<Climb> Upsert(Climb climb)
+        public async Task<Climb> UpsertAsync(Climb climb)
         {
             await _upsertClimbCommand.ExecuteAsync(new UpsertClimbCommandParameters
             {
@@ -42,7 +42,7 @@ namespace MonkeyStrong.Api.DataStore.Repositories
             return climb;
         }
 
-        public async Task Delete(Climb climb)
+        public async Task DeleteAsync(Climb climb)
         {
             await _deleteClimbCommand.ExecuteAsync(new DeleteClimbCommandParameters
             {
@@ -52,13 +52,13 @@ namespace MonkeyStrong.Api.DataStore.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<Climb> Get(GetClimbsParameters parameters)
+        public async Task<Climb> GetAsync(GetClimbsParameters parameters)
         {
-            var result = await GetMany(parameters);
+            var result = await GetManyAsync(parameters);
             return result.FirstOrDefault();
         }
 
-        public async Task<IEnumerable<Climb>> GetMany(GetClimbsParameters parameters)
+        public async Task<IEnumerable<Climb>> GetManyAsync(GetClimbsParameters parameters)
         {
             var collection = _database.GetCollection<Climb>("climbs");
 

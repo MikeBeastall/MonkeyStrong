@@ -5,11 +5,11 @@ using MonkeyStrong.Api.Models;
 
 namespace MonkeyStrong.Api.DataStore.Interfaces
 {
-    internal interface IClimbRepository
+    public interface IClimbRepository
     {
-        Task<Climb> Get(GetClimbsParameters parameters);
-        Task<IEnumerable<Climb>> GetMany(GetClimbsParameters parameters);
-        Task<Climb> Upsert(Climb climb);
-        Task Delete(Climb climb);
+        Task<Climb> GetAsync(GetClimbsParameters parameters);
+        Task<IEnumerable<Climb>> GetManyAsync(GetClimbsParameters parameters);
+        Task<Climb> UpsertAsync(Climb climb);
+        Task DeleteAsync(Climb climb);
     }
 }
