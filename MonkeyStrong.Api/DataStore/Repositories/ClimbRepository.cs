@@ -58,13 +58,18 @@ namespace MonkeyStrong.Api.DataStore.Repositories
         public async Task<IEnumerable<Climb>> GetManyAsync(GetClimbsParameters parameters)
         {
             var collection = _database.GetCollection<Climb>("climbs");
-
-            return await _getClimbsQuery.ExecuteAsync(new GetClimbsQueryParameters
+            var queryParameters = new GetClimbsQueryParameters
             {
                 Id = parameters.Id,
-                Styles = parameters.Styles.ToList(),
                 Name = parameters.Name
-            }, collection);
+            };
+
+            if (parameters.Styles != null)
+            {
+                queryParameters.Styles = parameters.Styles.ToList();
+            }
+
+            return await _getClimbsQuery.ExecuteAsync(queryParameters, collection);
         }
     }
 }
