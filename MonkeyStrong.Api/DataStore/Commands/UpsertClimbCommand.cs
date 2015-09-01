@@ -3,14 +3,13 @@ using System.Threading.Tasks;
 using MongoDB.Driver;
 using MonkeyStrong.Api.DataStore.Commands.Interfaces;
 using MonkeyStrong.Api.DataStore.Commands.Parameters;
-using MonkeyStrong.Api.DataStore.Interfaces;
 using MonkeyStrong.Api.Models;
 
 namespace MonkeyStrong.Api.DataStore.Commands
 {
     public class UpsertClimbCommand : IUpsertClimbCommand
     {
-        public async Task ExecuteAsync(UpsertClimbCommandParameters parameters, IDataCollection<Climb> collection)
+        public async Task ExecuteAsync(UpsertClimbCommandParameters parameters, IMongoCollection<Climb> collection)
         {
             var climb = new Climb
             {

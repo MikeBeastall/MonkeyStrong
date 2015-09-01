@@ -199,7 +199,6 @@
     <Compile Include="DataStore\Commands\UpsertClimbCommand.cs" />
     <Compile Include="DataStore\Mongo\MongoDatabase.cs" />
     <Compile Include="DataStore\Interfaces\IDatabase.cs" />
-    <Compile Include="DataStore\Interfaces\IDataCollection.cs" />
     <Compile Include="DataStore\Queries\GetClimbsQuery.cs" />
     <Compile Include="DataStore\Queries\Interfaces\IGetClimbsQuery.cs" />
     <Compile Include="DataStore\Queries\Interfaces\IQuery.cs" />

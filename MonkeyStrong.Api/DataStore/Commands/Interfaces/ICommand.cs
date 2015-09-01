@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using MonkeyStrong.Api.DataStore.Interfaces;
+using MongoDB.Driver;
 
 namespace MonkeyStrong.Api.DataStore.Commands.Interfaces
 {
     public interface ICommand<in TParameters, TCollection>
     {
-        Task ExecuteAsync(TParameters parameters, IDataCollection<TCollection> collection);
+        Task ExecuteAsync(TParameters parameters, IMongoCollection<TCollection> collection);
     }
 }

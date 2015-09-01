@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using MonkeyStrong.Api.DataStore.Interfaces;
 using MonkeyStrong.Api.DataStore.Queries.Interfaces;
 using MonkeyStrong.Api.DataStore.Queries.Parameters;
 using MonkeyStrong.Api.Models;
@@ -12,7 +11,7 @@ namespace MonkeyStrong.Api.DataStore.Queries
     public class GetClimbsQuery : IGetClimbsQuery
     {
         public async Task<IEnumerable<Climb>> ExecuteAsync(GetClimbsQueryParameters parameters,
-            IDataCollection<Climb> collection)
+            IMongoCollection<Climb> collection)
         {
             var filters = new List<FilterDefinition<Climb>>();
 

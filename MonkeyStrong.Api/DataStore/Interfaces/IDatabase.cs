@@ -1,7 +1,9 @@
-﻿namespace MonkeyStrong.Api.DataStore.Interfaces
+﻿using MongoDB.Driver;
+
+namespace MonkeyStrong.Api.DataStore.Interfaces
 {
     public interface IDatabase
     {
-        IDataCollection<T> GetCollection<T>(string name);
+        IMongoCollection<T> GetCollection<T>(string name);
     }
 }

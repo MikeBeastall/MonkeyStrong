@@ -12,9 +12,9 @@ namespace MonkeyStrong.Api.DataStore.Mongo
             _database = database;
         }
 
-        public IDataCollection<T> GetCollection<T>(string name)
+        public IMongoCollection<T> GetCollection<T>(string name)
         {
-            return (IDataCollection<T>) _database.GetCollection<T>(name);
+            return _database.GetCollection<T>(name);
         }
     }
 }
